@@ -102,3 +102,28 @@ export function formatTimestamp(isoString: string): string {
     hour12: true,
   });
 }
+
+// Get total minutes earned from all vouchers
+export function getTotalMinutesEarned(): number {
+  const vouchers = getVouchers();
+  return vouchers.reduce((total, voucher) => total + voucher.rewardMinutes, 0);
+}
+
+// Get minutes spent
+export function getMinutesSpent(): number {
+  if (typeof window === "undefined") return 0;
+  const stored = localStorage.getItem("multiplication-master-minutes-spent");
+  return stored ? parseInt(stored) : 0;
+}
+
+// Add minutes to spent counter
+export function spendMinutes(minutes: number): void {
+  if (typeof window === "undefined") return;
+  const currentSpent = getMinutesSpent();
+  localStorage.setItem("multiplication-master-minutes-spent", (currentSpent + minutes).toString());
+}
+
+// Get available balance (earned - spent)
+export function getMinutesBalance(): number {
+  return getTotalMinutesEarned() - getMinutesSpent();
+}
