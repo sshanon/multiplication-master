@@ -86,7 +86,7 @@ export default function QuestionScreen({ session, onAnswer }: QuestionScreenProp
 
   return (
     <div
-      className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100 flex flex-col p-4"
+      className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 flex flex-col p-4"
       onKeyDown={handleKeyDown}
       tabIndex={0}
     >
@@ -136,8 +136,8 @@ export default function QuestionScreen({ session, onAnswer }: QuestionScreenProp
           <div
             className={`rounded-xl p-4 mb-3 text-lg font-bold ${
               feedback.type === "correct"
-                ? "bg-green-500 text-white"
-                : "bg-red-500 text-white"
+                ? "bg-emerald-400 text-white"
+                : "bg-rose-400 text-white"
             }`}
           >
             {feedback.type === "correct" ? (
@@ -158,7 +158,7 @@ export default function QuestionScreen({ session, onAnswer }: QuestionScreenProp
             key={num}
             onClick={() => handleNumberClick(num.toString())}
             disabled={!!feedback}
-            className="bg-white hover:bg-blue-100 text-gray-800 text-3xl font-bold rounded-xl shadow-lg p-5 transform transition-all duration-100 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="bg-white hover:bg-sky-100 text-gray-800 text-3xl font-bold rounded-xl shadow-lg p-5 transform transition-all duration-100 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {num}
           </button>
@@ -173,14 +173,14 @@ export default function QuestionScreen({ session, onAnswer }: QuestionScreenProp
         <button
           onClick={() => handleNumberClick("0")}
           disabled={!!feedback}
-          className="bg-white hover:bg-blue-100 text-gray-800 text-3xl font-bold rounded-xl shadow-lg p-5 transform transition-all duration-100 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="bg-white hover:bg-sky-100 text-gray-800 text-3xl font-bold rounded-xl shadow-lg p-5 transform transition-all duration-100 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           0
         </button>
         <button
           onClick={handleSubmit}
           disabled={!currentAnswer || !!feedback}
-          className="bg-green-500 hover:bg-green-600 text-white text-xl font-bold rounded-xl shadow-lg p-5 transform transition-all duration-100 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="bg-emerald-400 hover:bg-emerald-500 text-white text-xl font-bold rounded-xl shadow-lg p-5 transform transition-all duration-100 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           ✓
         </button>

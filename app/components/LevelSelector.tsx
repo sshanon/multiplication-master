@@ -29,16 +29,16 @@ export default function LevelSelector({ onSelectLevel }: LevelSelectorProps) {
   };
 
   const levelColors = [
-    "bg-green-500 hover:bg-green-600",
-    "bg-blue-500 hover:bg-blue-600",
-    "bg-purple-500 hover:bg-purple-600",
-    "bg-red-500 hover:bg-red-600",
+    "bg-emerald-400 hover:bg-emerald-500",
+    "bg-sky-400 hover:bg-sky-500",
+    "bg-violet-400 hover:bg-violet-500",
+    "bg-rose-400 hover:bg-rose-500",
   ];
 
   const levelEmojis = ["🌟", "🚀", "👑", "🏆"];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-100 via-pink-100 to-blue-100 flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 flex flex-col items-center justify-center p-4">
       <div className="text-center mb-4">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
           Multiplication Master
@@ -55,14 +55,14 @@ export default function LevelSelector({ onSelectLevel }: LevelSelectorProps) {
             <div className="text-3xl">📚</div>
             <div>
               <p className="text-sm text-gray-600">Reading Time Balance</p>
-              <p className="text-2xl font-bold text-purple-600">
+              <p className="text-2xl font-bold text-indigo-600">
                 {balance} minute{balance !== 1 ? "s" : ""}
               </p>
             </div>
           </div>
           <button
             onClick={() => setShowSpendUI(!showSpendUI)}
-            className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold rounded-lg px-4 py-2 transition-colors"
+            className="bg-amber-400 hover:bg-amber-500 text-white text-sm font-semibold rounded-lg px-4 py-2 transition-colors"
           >
             {showSpendUI ? "Cancel" : "Use Minutes"}
           </button>
@@ -80,12 +80,12 @@ export default function LevelSelector({ onSelectLevel }: LevelSelectorProps) {
                 placeholder="Enter minutes"
                 min="1"
                 max={balance}
-                className="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-orange-500"
+                className="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-indigo-400"
               />
               <button
                 onClick={handleSpendMinutes}
                 disabled={!minutesToSpend || parseInt(minutesToSpend) <= 0 || parseInt(minutesToSpend) > balance}
-                className="bg-green-500 hover:bg-green-600 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold rounded-lg px-6 py-2 transition-colors"
+                className="bg-emerald-400 hover:bg-emerald-500 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold rounded-lg px-6 py-2 transition-colors"
               >
                 Done Reading!
               </button>

@@ -97,7 +97,7 @@ export default function Home() {
 
   if (gameState === "failed") {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-red-100 via-orange-100 to-yellow-100 flex flex-col items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-rose-50 via-orange-50 to-amber-50 flex flex-col items-center justify-center p-4">
         <div className="text-center">
           <div className="text-5xl mb-3">💪</div>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
@@ -110,7 +110,7 @@ export default function Home() {
           </p>
           <button
             onClick={handlePlayAgain}
-            className="bg-blue-500 hover:bg-blue-600 text-white text-lg font-bold rounded-xl shadow-lg px-8 py-4 transform transition-all duration-200 hover:scale-105 active:scale-95"
+            className="bg-sky-400 hover:bg-sky-500 text-white text-lg font-bold rounded-xl shadow-lg px-8 py-4 transform transition-all duration-200 hover:scale-105 active:scale-95"
           >
             Try Again! 🎮
           </button>
