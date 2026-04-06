@@ -99,18 +99,18 @@ export default function Home() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-red-100 via-orange-100 to-yellow-100 flex flex-col items-center justify-center p-4">
         <div className="text-center">
-          <div className="text-8xl mb-4">💪</div>
-          <h1 className="text-6xl font-bold text-gray-800 mb-4">
+          <div className="text-5xl mb-3">💪</div>
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
             Keep Practicing!
           </h1>
-          <p className="text-3xl text-gray-600 mb-8">
+          <p className="text-lg md:text-xl text-gray-600 mb-6">
             You need to get all questions correct to earn the voucher.
             <br />
             Don't give up, Yonatan!
           </p>
           <button
             onClick={handlePlayAgain}
-            className="bg-blue-500 hover:bg-blue-600 text-white text-2xl font-bold rounded-2xl shadow-lg px-12 py-6 transform transition-all duration-200 hover:scale-105 active:scale-95"
+            className="bg-blue-500 hover:bg-blue-600 text-white text-lg font-bold rounded-xl shadow-lg px-8 py-4 transform transition-all duration-200 hover:scale-105 active:scale-95"
           >
             Try Again! 🎮
           </button>
