@@ -20,7 +20,7 @@ export const LEVELS: Level[] = [
   {
     id: 3,
     name: "Master",
-    description: "Full table (1-10, randomized)",
+    description: "Full table (2-10, randomized)",
     scope: "Achieve accuracy and fluency",
     questionCount: 10,
     rewardMinutes: 2,

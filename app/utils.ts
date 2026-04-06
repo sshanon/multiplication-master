@@ -14,17 +14,17 @@ export function generateQuestions(level: Level): Question[] {
 
     switch (level.id) {
       case 1:
-        // Level 1: up to 5×5
-        num1 = randomInt(1, 5);
-        num2 = randomInt(1, 5);
+        // Level 1: 2-5 × 2-5 (no multiplying by 1)
+        num1 = randomInt(2, 5);
+        num2 = randomInt(2, 5);
         break;
 
       case 2:
-        // Level 2: Everything from Level 1 (1-5 × 1-5)
+        // Level 2: Everything from Level 1 (2-5 × 2-5)
         // PLUS multiplications involving 2, 5, or 10 up to 10
         do {
-          num1 = randomInt(1, 10);
-          num2 = randomInt(1, 10);
+          num1 = randomInt(2, 10);
+          num2 = randomInt(2, 10);
         } while (
           // Reject if both > 5 AND neither is 2, 5, or 10
           num1 > 5 && num2 > 5 &&
@@ -35,14 +35,14 @@ export function generateQuestions(level: Level): Question[] {
 
       case 3:
       case 4:
-        // Level 3 & 4: full randomization 1-10
-        num1 = randomInt(1, 10);
-        num2 = randomInt(1, 10);
+        // Level 3 & 4: full randomization 2-10 (no multiplying by 1)
+        num1 = randomInt(2, 10);
+        num2 = randomInt(2, 10);
         break;
 
       default:
-        num1 = randomInt(1, 10);
-        num2 = randomInt(1, 10);
+        num1 = randomInt(2, 10);
+        num2 = randomInt(2, 10);
     }
 
     questions.push({
