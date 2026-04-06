@@ -12,8 +12,8 @@ export const LEVELS: Level[] = [
   {
     id: 2,
     name: "Builder",
-    description: "Multiplication up to 10×10",
-    scope: "Reinforce patterns (2, 5, 10 emphasized)",
+    description: "Level 1 + times 2, 5, and 10",
+    scope: "Reinforce patterns (2, 5, 10)",
     questionCount: 15,
     rewardMinutes: 1,
   },

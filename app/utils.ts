@@ -20,16 +20,17 @@ export function generateQuestions(level: Level): Question[] {
         break;
 
       case 2:
-        // Level 2: up to 10×10, with emphasis on 2, 5, 10
-        // 50% chance of using 2, 5, or 10
-        if (Math.random() < 0.5) {
-          const easyNums = [2, 5, 10];
-          num1 = easyNums[randomInt(0, 2)];
-          num2 = randomInt(1, 10);
-        } else {
+        // Level 2: Everything from Level 1 (1-5 × 1-5)
+        // PLUS multiplications involving 2, 5, or 10 up to 10
+        do {
           num1 = randomInt(1, 10);
           num2 = randomInt(1, 10);
-        }
+        } while (
+          // Reject if both > 5 AND neither is 2, 5, or 10
+          num1 > 5 && num2 > 5 &&
+          ![2, 5, 10].includes(num1) &&
+          ![2, 5, 10].includes(num2)
+        );
         break;
 
       case 3:
