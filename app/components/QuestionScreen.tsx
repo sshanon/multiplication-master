@@ -81,33 +81,37 @@ export default function QuestionScreen({ session, onAnswer }: QuestionScreenProp
 
   return (
     <div
-      className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100 flex flex-col items-center justify-center p-4"
+      className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100 flex flex-col p-4"
       onKeyDown={handleKeyDown}
       tabIndex={0}
     >
-      {/* Timer (Level 4 only) */}
-      {session.level.timeLimit && timeRemaining !== undefined && (
-        <div className="absolute top-8 right-8 bg-white rounded-2xl shadow-xl p-4">
-          <div className={`text-4xl font-bold ${timeRemaining <= 20 ? "text-red-500 animate-pulse" : "text-gray-800"}`}>
-            ⏱️ {timeRemaining}s
+      {/* Top Bar with Progress and Timer */}
+      <div className="flex justify-between items-start mb-8 mt-4">
+        {/* Progress */}
+        <div className="bg-white rounded-2xl shadow-xl p-4">
+          <div className="text-xl font-semibold text-gray-700">
+            Question {progress} of {total}
+          </div>
+          <div className="w-48 bg-gray-200 rounded-full h-3 mt-2">
+            <div
+              className="bg-green-500 h-3 rounded-full transition-all duration-300"
+              style={{ width: `${(progress / total) * 100}%` }}
+            ></div>
           </div>
         </div>
-      )}
 
-      {/* Progress */}
-      <div className="absolute top-8 left-8 bg-white rounded-2xl shadow-xl p-4">
-        <div className="text-xl font-semibold text-gray-700">
-          Question {progress} of {total}
-        </div>
-        <div className="w-48 bg-gray-200 rounded-full h-3 mt-2">
-          <div
-            className="bg-green-500 h-3 rounded-full transition-all duration-300"
-            style={{ width: `${(progress / total) * 100}%` }}
-          ></div>
-        </div>
+        {/* Timer (Level 4 only) */}
+        {session.level.timeLimit && timeRemaining !== undefined && (
+          <div className="bg-white rounded-2xl shadow-xl p-4">
+            <div className={`text-4xl font-bold ${timeRemaining <= 20 ? "text-red-500 animate-pulse" : "text-gray-800"}`}>
+              ⏱️ {timeRemaining}s
+            </div>
+          </div>
+        )}
       </div>
 
-      {/* Question */}
+      {/* Question - Centered */}
+      <div className="flex-1 flex flex-col items-center justify-center">
       <div className="text-center mb-8">
         <div className="bg-white rounded-3xl shadow-2xl p-12 mb-6">
           <div className="text-7xl font-bold text-gray-800">
@@ -175,6 +179,7 @@ export default function QuestionScreen({ session, onAnswer }: QuestionScreenProp
         >
           ✓
         </button>
+      </div>
       </div>
     </div>
   );
