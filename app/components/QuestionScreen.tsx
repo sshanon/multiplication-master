@@ -62,7 +62,7 @@ export default function QuestionScreen({ session, onAnswer }: QuestionScreenProp
         onAnswer(answer);
         setCurrentAnswer("");
         setFeedback(null);
-      }, 800);
+      }, 400);
     } else {
       setFeedback({ type: "incorrect", correctAnswer: currentQuestion.correctAnswer });
       // Give more time to see the correct answer when wrong
