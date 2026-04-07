@@ -5,6 +5,20 @@ function randomInt(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// Weighted random for harder numbers (favors 6, 7, 8, 9)
+function weightedRandomForHard(): number {
+  // 70% chance of harder numbers (6, 7, 8, 9)
+  // 30% chance of easier numbers (2, 3, 4, 5, 10)
+  if (Math.random() < 0.7) {
+    // Harder numbers
+    return randomInt(6, 9);
+  } else {
+    // Easier numbers
+    const easyNums = [2, 3, 4, 5, 10];
+    return easyNums[randomInt(0, 4)];
+  }
+}
+
 // Generate questions based on level
 export function generateQuestions(level: Level): Question[] {
   const questions: Question[] = [];
@@ -35,9 +49,9 @@ export function generateQuestions(level: Level): Question[] {
 
       case 3:
       case 4:
-        // Level 3 & 4: full randomization 2-10 (no multiplying by 1)
-        num1 = randomInt(2, 10);
-        num2 = randomInt(2, 10);
+        // Level 3 & 4: weighted toward harder numbers (6-9)
+        num1 = weightedRandomForHard();
+        num2 = weightedRandomForHard();
         break;
 
       default:

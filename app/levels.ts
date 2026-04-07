@@ -20,7 +20,7 @@ export const LEVELS: Level[] = [
   {
     id: 3,
     name: "Master",
-    description: "Full table (2-10, randomized)",
+    description: "Full table (harder numbers!)",
     scope: "Achieve accuracy and fluency",
     questionCount: 10,
     rewardMinutes: 2,
@@ -28,7 +28,7 @@ export const LEVELS: Level[] = [
   {
     id: 4,
     name: "Champion",
-    description: "Full table with time pressure!",
+    description: "Hardest numbers + time pressure!",
     scope: "Speed + accuracy under pressure",
     questionCount: 10,
     timeLimit: 100, // 100 seconds total
